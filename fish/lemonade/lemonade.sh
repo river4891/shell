@@ -5,8 +5,8 @@
 #   Author        : tower_town
 #   Origin_Author : hanxi
 #   Email         : tower_town@outlook.com
-#   File Name     : lemonade.fish
-#   Last Modified : 2023-08-18 00:17
+#   File Name     : lemonade.sh
+#   Last Modified : 2023-08-18 15:29
 #   Describe      : script for lemonade
 #   Reference     : https://zhuanlan.zhihu.com/p/65971135
 #
@@ -14,12 +14,11 @@
 
 
 function lemonade
-	set host "http://192.168.1.50:2489"
 	if  [ $argv[1] = 'copy' ]
-			curl -X POST --data "$argv[2]" "$host"/copy
+			curl -X POST --data "$argv[2]" "http://192.168.1.50:2489/copy"
 	end
 
 	if [ $argv[1] = 'paste' ]
-			curl "$host"/paste
+			curl "http://192.168.1.50:2489/paste"
 	end
 end
